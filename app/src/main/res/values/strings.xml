@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ColorTaste</string>
     <string name="choose_color_text">Choose Color</string>
+    <string name="red_button_text">Red</string>
+    <string name="orange_button_text">Orange</string>
+    <string name="yellow_button_text">Yellow</string>
+    <string name="green_button_text">Green</string>
+    <string name="blue_button_text">Blue</string>
+    <string name="indigo_button_text">Indigo</string>
+    <string name="violet_button_text">Violet</string>
 </resources>
