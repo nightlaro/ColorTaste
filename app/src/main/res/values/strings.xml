@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ColorTaste</string>
+    <string name="choose_color_text">Choose Color</string>
 </resources>
