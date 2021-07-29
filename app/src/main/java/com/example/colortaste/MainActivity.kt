@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val COLOR_KEY = "lolhahahahalolkeklolencrypted"
+        const val PREF_NAME = "drake"
     }
 
     lateinit var mainContainer : ConstraintLayout
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
-        val sharedPref = getSharedPreferences(COLOR_KEY, Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         val backgroundColor = sharedPref.getInt(COLOR_KEY, 0)
         Log.d("COLOR", "backgroundColor: $backgroundColor")
         mainContainer.setBackgroundColor(backgroundColor)
