@@ -27,36 +27,17 @@ class DefaultColorsActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
 
         setBackgroundColor()
-        val redButton = findViewById<Button>(R.id.red_button)
-        val orangeButton = findViewById<Button>(R.id.orange_button)
-        val yellowButton = findViewById<Button>(R.id.yellow_button)
-        val greenButton = findViewById<Button>(R.id.green_button)
-        val blueButton = findViewById<Button>(R.id.blue_button)
-        val indigoButton = findViewById<Button>(R.id.indigo_button)
-        val violetButton = findViewById<Button>(R.id.violet_button)
-        //damn is there a better way of doing this?
-        redButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        orangeButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        yellowButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        greenButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        blueButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        indigoButton.setOnClickListener { view ->
-            onClick(view)
-        }
-        violetButton.setOnClickListener { view ->
-            onClick(view)
-        }
 
+        val listOfButtons = listOf<Button>(
+            findViewById(R.id.red_button),
+            findViewById(R.id.orange_button),
+            findViewById(R.id.yellow_button),
+            findViewById(R.id.green_button),
+            findViewById(R.id.blue_button),
+            findViewById(R.id.indigo_button),
+            findViewById(R.id.violet_button)
+        )
+        listOfButtons.forEach { it.setOnClickListener(::onClick) }
     }
 
     private fun onClick(view: View) {
