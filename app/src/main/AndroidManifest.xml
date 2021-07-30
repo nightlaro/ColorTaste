@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorTaste">
+
         <activity
-            android:name=".DefaultColorsActivity" />
+            android:name=".CustomColorActivity"
+            android:exported="true" />
+        <activity android:name=".DefaultColorsActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
