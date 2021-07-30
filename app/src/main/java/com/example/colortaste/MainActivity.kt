@@ -23,9 +23,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         mainContainer = findViewById(R.id.main_layout)
         val chooseButton = findViewById<Button>(R.id.choose_color_button)
+        val customColorButton = findViewById<Button>(R.id.create_custom_button_main)
         chooseButton.setOnClickListener { _ ->
             startDefaultColorsActivity()
         }
+        customColorButton.setOnClickListener {
+            startCustomColorActivity()
+        }
+    }
+
+    private fun startCustomColorActivity() {
+        val intent = Intent(this, CustomColorActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onRestart() {
