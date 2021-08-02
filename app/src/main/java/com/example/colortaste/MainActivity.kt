@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    override fun onRestart() {
-        super.onRestart()
+    override fun onResume() {
+        super.onResume()
         val sharedPref = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         val backgroundColor = sharedPref.getInt(COLOR_KEY, 0)
         Log.d("COLOR", "backgroundColor: $backgroundColor")
