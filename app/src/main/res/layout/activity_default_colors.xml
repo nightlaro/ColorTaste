@@ -10,7 +10,7 @@
         android:id="@+id/default_color_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:baselineAligned="false"
         android:gravity="center|center_vertical"
         android:orientation="vertical"
@@ -26,7 +26,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/indigo"
             android:text="@string/indigo_button_text"
-            android:textColor="#9E9D24" />
+            android:textColor="@color/yellow" />
 
         <Button
             android:id="@+id/blue_button"
@@ -35,7 +35,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/blue"
             android:text="@string/blue_button_text"
-            android:textColor="#B0BEC5" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/yellow_button"
@@ -44,7 +44,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/yellow"
             android:text="@string/yellow_button_text"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/violet_button"
@@ -53,7 +53,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/violet"
             android:text="@string/violet_button_text"
-            android:textColor="#CFD8DC" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/green_button"
@@ -62,7 +62,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/green"
             android:text="@string/green_button_text"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/orange_button"
@@ -71,7 +71,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/orange"
             android:text="@string/orange_button_text"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/red_button"
@@ -80,7 +80,7 @@
             android:layout_marginBottom="25dp"
             android:background="@color/red"
             android:text="@string/red_button_text"
-            android:textColor="#000000" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
