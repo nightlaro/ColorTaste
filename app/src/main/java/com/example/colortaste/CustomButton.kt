@@ -1,4 +1,7 @@
 package com.example.colortaste
 
-data class CustomButton(val title : String, val color: String) {
+import java.io.Serializable
+
+data class CustomButton(val title : String, val color: String) : Serializable {
+
 }
