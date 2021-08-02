@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DefaultColorsActivity">
+    tools:context=".DefaultColorsActivity">,
 
     <LinearLayout
         android:id="@+id/default_color_container"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/indigo"
-            android:backgroundTint="@color/indigo"
+            app:backgroundTint="@color/indigo"
             android:text="@string/indigo_button_text"
             android:textColor="#9E9D24" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/blue"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/blue_button_text"
             android:textColor="#B0BEC5" />
 
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/yellow"
-            android:backgroundTint="@color/yellow"
+            app:backgroundTint="@color/yellow"
             android:text="@string/yellow_button_text"
             android:textColor="#000000" />
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/violet"
-            android:backgroundTint="@color/violet"
+            app:backgroundTint="@color/violet"
             android:text="@string/violet_button_text"
             android:textColor="#CFD8DC" />
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/green"
-            android:backgroundTint="@color/green"
+            app:backgroundTint="@color/green"
             android:text="@string/green_button_text"
             android:textColor="#000000" />
 
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/orange"
-            android:backgroundTint="@color/orange"
+            app:backgroundTint="@color/orange"
             android:text="@string/orange_button_text"
             android:textColor="#000000" />
 
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:background="@color/red"
-            android:backgroundTint="@color/red"
+            app:backgroundTint="@color/red"
             android:text="@string/red_button_text"
             android:textColor="#000000" />
     </LinearLayout>
