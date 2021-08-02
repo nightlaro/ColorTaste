@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
+    override fun onStart() {
         super.onResume()
         val sharedPref = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         val backgroundColor = sharedPref.getInt(COLOR_KEY, 0)
