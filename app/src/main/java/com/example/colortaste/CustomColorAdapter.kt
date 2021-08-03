@@ -15,7 +15,6 @@ class CustomColorAdapter(data: List<CustomButton>) :
     var buttonList = data
         set(value) {
             field = value
-            Log.d("COLOR", "Setting new value $field , OLD: $value")
             notifyDataSetChanged()
         }
 
@@ -33,13 +32,11 @@ class CustomColorAdapter(data: List<CustomButton>) :
     override fun onBindViewHolder(holder: CustomButtonViewHolder, position: Int) {
         val title = buttonList[position].title
         val colorHexValue = buttonList[position].color
-        Log.d("COLOR", "Setting title: $title, HEX: $colorHexValue")
         holder.customViewButton.text = title
         holder.customViewButton.setBackgroundColor(Color.parseColor("#${colorHexValue}"))
     }
 
     override fun getItemCount(): Int {
-        Log.d("SIZE", "${buttonList.size}")
         return buttonList.size
     }
 
