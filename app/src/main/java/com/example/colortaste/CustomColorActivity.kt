@@ -1,23 +1,22 @@
 package com.example.colortaste
 
 import android.app.AlertDialog
+import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
-import android.text.Layout
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CustomColorActivity : AppCompatActivity() {
-    //lateinit var customColorRecyclerView: RecyclerView
+class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButtonClickListener {
+
     private lateinit var customColorAdapter: CustomColorAdapter
     private lateinit var customColorRecyclerView : RecyclerView
     private val dataManager: ButtonListDataManager = ButtonListDataManager(this)
@@ -28,9 +27,14 @@ class CustomColorActivity : AppCompatActivity() {
         val addColorButton : FloatingActionButton = findViewById(R.id.add_color_button)
         val buttonList : List<CustomButton> = dataManager.readListOfButtons()
         customColorRecyclerView = findViewById(R.id.custom_buttons_recyclerview)
-        customColorAdapter = CustomColorAdapter(buttonList)
+        customColorAdapter = CustomColorAdapter(buttonList, this)
         customColorRecyclerView.layoutManager = LinearLayoutManager(this)
         customColorRecyclerView.adapter = customColorAdapter
+
+        val sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
+        val backgroundColor = sharedPreferences.getInt(MainActivity.COLOR_KEY, 0)
+        val mainContainer = findViewById<View>(R.id.custom_color_layout)
+        mainContainer.setBackgroundColor(backgroundColor)
 
         addColorButton.setOnClickListener {
             startDialog()
@@ -51,12 +55,12 @@ class CustomColorActivity : AppCompatActivity() {
             .setPositiveButton("Add") { dialog, _ ->
                 val buttonTitleString = buttonTitle.text.toString()
                 val colorHexString = colorHex.text.toString()
-                Log.d("CREATE", "Title: $buttonTitle, HEX: $colorHex")
+
                 if (filterHexString(colorHexString)) {
                     val newButton = CustomButton(buttonTitleString, colorHexString)
                     val adapter = customColorRecyclerView.adapter as CustomColorAdapter
                     dataManager.saveButton(newButton)
-                    adapter.addButton(newButton)
+                    adapter.buttonList += newButton
                     dialog.dismiss()
                 } else {
                     val text = "Make sure you enter a correct HEX code, google it if you have to " +
@@ -67,6 +71,16 @@ class CustomColorActivity : AppCompatActivity() {
             .create()
             .show()
 
+    }
+
+    override fun onClick(view: View) {
+        val buttonBackgroundColor = view.background as ColorDrawable
+        val sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
+        sharedPreferences.edit {
+            putInt(MainActivity.COLOR_KEY, buttonBackgroundColor.color)
+            apply()
+        }
+        finish()
     }
 
     private fun filterHexString(colorHexString: String): Boolean {

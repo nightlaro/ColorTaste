@@ -19,7 +19,6 @@ class DefaultColorsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_default_colors)
         buttonsContainer = findViewById(R.id.default_color_container)
-
         sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
 
         setBackgroundColor()
@@ -36,7 +35,7 @@ class DefaultColorsActivity : AppCompatActivity() {
         listOfButtons.forEach { it.setOnClickListener(::onClick) }
     }
 
-    private fun onClick(view: View) {
+     private fun onClick(view: View) {
         val buttonBackgroundColor = view.background as ColorDrawable
         sharedPreferences.edit {
             putInt(MainActivity.COLOR_KEY, buttonBackgroundColor.color)
