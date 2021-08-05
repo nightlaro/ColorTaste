@@ -16,7 +16,7 @@ class CustomColorAdapter(data: List<CustomColor>, private val listener: CustomBu
         }
 
     interface CustomButtonClickListener {
-        fun onClick(view: View)
+        fun onClick(color: String)
     }
 
     class CustomButtonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -35,7 +35,7 @@ class CustomColorAdapter(data: List<CustomColor>, private val listener: CustomBu
         holder.customViewButton.text = title
         holder.customViewButton.setBackgroundColor(Color.parseColor("#${colorHexValue}"))
         holder.customViewButton.setOnClickListener {
-            listener.onClick(holder.customViewButton)
+            listener.onClick(buttonList[position].color)
         }
     }
 

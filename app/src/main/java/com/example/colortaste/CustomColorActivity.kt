@@ -73,11 +73,11 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
 
     }
 
-    override fun onClick(view: View) {
-        val buttonBackgroundColor = view.background as ColorDrawable
+    override fun onClick(color: String) {
+        val buttonBackgroundColor = Color.parseColor("#$color")
         val sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
         sharedPreferences.edit {
-            putInt(MainActivity.COLOR_KEY, buttonBackgroundColor.color)
+            putInt(MainActivity.COLOR_KEY, buttonBackgroundColor)
             apply()
         }
         finish()
