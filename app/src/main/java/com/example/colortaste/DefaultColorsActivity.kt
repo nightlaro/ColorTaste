@@ -1,6 +1,7 @@
 package com.example.colortaste
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,13 @@ import android.widget.Button
 import androidx.core.content.edit
 
 class DefaultColorsActivity : AppCompatActivity() {
+
+    companion object {
+        fun startDefaultColorsActivity(activity: AppCompatActivity) {
+            val intent = Intent(activity, DefaultColorsActivity::class.java)
+            activity.startActivity(intent)
+        }
+    }
 
     private lateinit var buttonsContainer : View
     private lateinit var sharedPreferences : SharedPreferences

@@ -2,8 +2,8 @@ package com.example.colortaste
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,6 +16,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButtonClickListener {
+
+    companion object {
+        fun startCustomColorActivity(activity: AppCompatActivity) {
+            val intent = Intent(activity, CustomColorActivity::class.java)
+            activity.startActivity(intent)
+        }
+    }
 
     private lateinit var customColorAdapter: CustomColorAdapter
     private lateinit var customColorRecyclerView : RecyclerView
