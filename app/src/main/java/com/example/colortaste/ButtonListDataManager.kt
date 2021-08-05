@@ -9,20 +9,16 @@ class ButtonListDataManager(private val context: Context) {
 
     fun saveButton(color: CustomColor) {
         val sharedPref : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        sharedPref.edit() {
+        sharedPref.edit {
             putString(color.title, color.color)
-            apply()
         }
     }
-    fun readListOfButtons(): MutableList<CustomColor> {
+    fun readListOfButtons(): List<CustomColor> {
         val sharedPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         val contents = sharedPrefs.all
-        val buttonsList = mutableListOf<CustomColor>()
 
-        for ((title, hex) in contents) {
-            buttonsList.add(CustomColor(title, hex as String))
+        return contents.map {
+            CustomColor(it.key, it.value as String)
         }
-
-        return buttonsList
     }
 }
