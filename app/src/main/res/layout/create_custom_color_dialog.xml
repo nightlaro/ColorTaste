@@ -24,7 +24,6 @@
 
     <EditText
         android:id="@+id/dialog_name_input"
-        style="@style/Widget.AppCompat.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
