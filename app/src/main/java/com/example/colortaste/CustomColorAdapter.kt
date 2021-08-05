@@ -20,7 +20,7 @@ class CustomColorAdapter(data: List<CustomColor>, private val listener: CustomBu
     }
 
     class CustomButtonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val customViewButton : Button = view.findViewById(R.id.custom_button)
+        val customViewButton : Button = view.findViewById(R.id.item_custom_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomButtonViewHolder {
