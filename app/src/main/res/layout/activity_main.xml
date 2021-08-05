@@ -9,8 +9,9 @@
 
     <Button
         android:id="@+id/choose_color_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:text="@string/choose_color_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,4 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.398" />
+
+    <Button
+        android:id="@+id/create_custom_button_main"
+        android:layout_width="180dp"
+        android:layout_height="52dp"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:text="@string/create_custom_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_color_button"
+        app:layout_constraintVertical_bias="0.115" />
 </androidx.constraintlayout.widget.ConstraintLayout>

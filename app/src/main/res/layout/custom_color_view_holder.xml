@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center|center_vertical"
+    tools:context=".custom_color_view_holder">
+
+    <Button
+        android:id="@+id/item_custom_button"
+        style="@style/ColorTaste.CustomButton"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.appcompat.widget.LinearLayoutCompat>

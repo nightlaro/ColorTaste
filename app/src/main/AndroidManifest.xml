@@ -10,13 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorTaste">
         <activity
-            android:name=".DefaultColorsActivity" />
+            android:name=".CustomColorActivity" />
+        <activity android:name=".DefaultColorsActivity" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

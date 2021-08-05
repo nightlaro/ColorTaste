@@ -8,6 +8,8 @@ import android.text.Layout
 import android.util.Log
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.colortaste.CustomColorActivity.Companion.startCustomColorActivity
+import com.example.colortaste.DefaultColorsActivity.Companion.startDefaultColorsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,8 +25,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         mainContainer = findViewById(R.id.main_layout)
         val chooseButton = findViewById<Button>(R.id.choose_color_button)
+        val customColorButton = findViewById<Button>(R.id.create_custom_button_main)
         chooseButton.setOnClickListener { _ ->
-            startDefaultColorsActivity()
+            startDefaultColorsActivity(this)
+        }
+        customColorButton.setOnClickListener {
+            startCustomColorActivity(this)
         }
     }
 
@@ -36,8 +42,4 @@ class MainActivity : AppCompatActivity() {
         mainContainer.setBackgroundColor(backgroundColor)
     }
 
-    private fun startDefaultColorsActivity() {
-        val intent = Intent(this, DefaultColorsActivity::class.java)
-        startActivity(intent)
-    }
 }

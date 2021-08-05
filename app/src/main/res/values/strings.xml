@@ -8,4 +8,8 @@
     <string name="blue_button_text">Blue</string>
     <string name="indigo_button_text">Indigo</string>
     <string name="violet_button_text">Violet</string>
+    <string name="create_custom_button_text">Create Custom Color</string>
+    <string name="dialog_prompt">Enter the name of your color and HEX code</string>
+    <string name="dialog_color_name">"Color Name: "</string>
+    <string name="dialog_color_hex">Color HEX value</string>
 </resources>
