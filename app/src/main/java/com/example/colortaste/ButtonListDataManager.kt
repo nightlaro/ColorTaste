@@ -8,20 +8,20 @@ import androidx.preference.PreferenceManager
 
 class ButtonListDataManager(private val context: Context) {
 
-    fun saveButton(button: CustomButton) {
+    fun saveButton(color: CustomColor) {
         val sharedPref : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref.edit() {
-            putString(button.title, button.color)
+            putString(color.title, color.color)
             apply()
         }
     }
-    fun readListOfButtons(): MutableList<CustomButton> {
+    fun readListOfButtons(): MutableList<CustomColor> {
         val sharedPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         val contents = sharedPrefs.all
-        val buttonsList = mutableListOf<CustomButton>()
+        val buttonsList = mutableListOf<CustomColor>()
 
         for ((title, hex) in contents) {
-            buttonsList.add(CustomButton(title, hex as String))
+            buttonsList.add(CustomColor(title, hex as String))
         }
 
         return buttonsList

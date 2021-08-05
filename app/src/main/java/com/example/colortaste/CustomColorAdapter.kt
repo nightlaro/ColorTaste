@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomColorAdapter(data: List<CustomButton>, private val listener: CustomButtonClickListener) :
+class CustomColorAdapter(data: List<CustomColor>, private val listener: CustomButtonClickListener) :
     RecyclerView.Adapter<CustomColorAdapter.CustomButtonViewHolder>() {
     var buttonList = data
         set(value) {

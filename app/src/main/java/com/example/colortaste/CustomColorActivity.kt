@@ -25,9 +25,9 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_color)
         val addColorButton : FloatingActionButton = findViewById(R.id.add_color_button)
-        val buttonList : List<CustomButton> = dataManager.readListOfButtons()
+        val colorList : List<CustomColor> = dataManager.readListOfButtons()
         customColorRecyclerView = findViewById(R.id.custom_buttons_recyclerview)
-        customColorAdapter = CustomColorAdapter(buttonList, this)
+        customColorAdapter = CustomColorAdapter(colorList, this)
         customColorRecyclerView.layoutManager = LinearLayoutManager(this)
         customColorRecyclerView.adapter = customColorAdapter
 
@@ -57,7 +57,7 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
                 val colorHexString = colorHex.text.toString()
 
                 if (filterHexString(colorHexString)) {
-                    val newButton = CustomButton(buttonTitleString, colorHexString)
+                    val newButton = CustomColor(buttonTitleString, colorHexString)
                     val adapter = customColorRecyclerView.adapter as CustomColorAdapter
                     dataManager.saveButton(newButton)
                     adapter.buttonList += newButton
