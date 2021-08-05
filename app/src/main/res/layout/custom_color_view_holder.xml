@@ -8,9 +8,6 @@
 
     <Button
         android:id="@+id/item_custom_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="25dp"
+        style="@style/ColorTaste.CustomButton"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.appcompat.widget.LinearLayoutCompat>
