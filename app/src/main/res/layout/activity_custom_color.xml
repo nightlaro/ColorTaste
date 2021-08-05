@@ -17,10 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <include
-        layout="@layout/custom_buttons_recyclerview"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/custom_buttons_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
