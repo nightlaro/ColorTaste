@@ -65,9 +65,8 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
 
                 if (filterHexString(colorHexString)) {
                     val newButton = CustomColor(buttonTitleString, colorHexString)
-                    val adapter = customColorRecyclerView.adapter as CustomColorAdapter
                     dataManager.saveButton(newButton)
-                    adapter.buttonList += newButton
+                    customColorAdapter.buttonList += newButton
                     dialog.dismiss()
                 } else {
                     val text = "Make sure you enter a correct HEX code, google it if you have to " +
