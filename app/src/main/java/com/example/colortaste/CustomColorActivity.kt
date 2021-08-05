@@ -44,8 +44,8 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
     private fun startDialog() {
         val dialogView = LayoutInflater.from(this)
             .inflate(R.layout.create_custom_color_dialog, null, false)
-        val buttonTitle = dialogView.findViewById<EditText>(R.id.dialog_name_input)
-        val colorHex = dialogView.findViewById<EditText>(R.id.dialog_hex_input)
+        val buttonTitleInput = dialogView.findViewById<EditText>(R.id.dialog_name_input)
+        val colorHexInput = dialogView.findViewById<EditText>(R.id.dialog_hex_input)
 
         AlertDialog.Builder(this)
             .setView(dialogView)
@@ -53,8 +53,8 @@ class CustomColorActivity : AppCompatActivity(), CustomColorAdapter.CustomButton
                 dialog.dismiss()
             }
             .setPositiveButton("Add") { dialog, _ ->
-                val buttonTitleString = buttonTitle.text.toString()
-                val colorHexString = colorHex.text.toString()
+                val buttonTitleString = buttonTitleInput.text.toString()
+                val colorHexString = colorHexInput.text.toString()
 
                 if (filterHexString(colorHexString)) {
                     val newButton = CustomColor(buttonTitleString, colorHexString)
